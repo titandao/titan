@@ -25,6 +25,14 @@ registrar.reserve.sendTransaction(tokenName, {from: eth.accounts[0]});
 # reminder contract flow
 
 
-var tokenSource = ' contract { ... }'
+var tokenSource = 'contract { ... }'
 
 var tokenCompiled = eth.compile.solidity(tokenSource)
+
+// there could be one of these that people refer to
+// OR others could create their own which would then have its own address
+var democracy = democracyContract.new(args... { })
+
+
+// others instantiating it
+var democracy = eth.contract(daoCompiled.Democracy.info.abiDefinition).at(democracy.address);
